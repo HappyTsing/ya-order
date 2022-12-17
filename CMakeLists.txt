@@ -3,5 +3,7 @@ project(ya_order)
 
 set(CMAKE_CXX_STANDARD 14)
 
-#add_executable(ya_order main.cpp include/Server.h include/StoreClient.h include/StudentClient.h include/Item.h src/Server.cpp src/Item.cpp src/StoreClient.cpp src/StudentClient.cpp)
-add_executable(ya_order main.cpp include/Server.h src/Server.cpp)
+find_package(Threads)
+
+add_executable(ya_order main.cpp include/Server.h include/Client.h include/Item.h src/Server.cpp src/Item.cpp src/Client.cpp include/Utils.h)
+target_link_libraries (${PROJECT_NAME} pthread)
