@@ -1,9 +1,15 @@
 #ifndef YA_ORDER_SERVER_H
 #define YA_ORDER_SERVER_H
 
-#include <string>
-#include <vector>
 #include "Item.h"
+#include <string>
+#include <netinet/in.h>
+#include <memory.h>
+#include <unistd.h>
+#include <iostream>
+#include <sys/socket.h>
+#include <vector>
+#include <fcntl.h>
 
 using namespace std;
 

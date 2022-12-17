@@ -4,10 +4,11 @@
 #include <iostream>
 #include <vector>
 #include <string.h>
+#include "Item.h"
 
 using namespace std;
 
-void printStudentClientHelpMessage() {
+void static printStudentClientHelpMessage() {
     cout
             << "***************************************************************************************************************************"
             << endl << endl
@@ -26,7 +27,7 @@ void printStudentClientHelpMessage() {
             << endl;
 }
 
-void printStoreClientHelpMessage() {
+void static printStoreClientHelpMessage() {
     cout
             << "***************************************************************************************************************************"
             << endl << endl
@@ -48,7 +49,7 @@ void printStoreClientHelpMessage() {
 }
 
 
-void printMainHelpMessage() {
+void static printMainHelpMessage() {
     cout
             << "***************************************************************************************************************************"
             << endl << endl
@@ -58,29 +59,29 @@ void printMainHelpMessage() {
             << endl
             << "  start server 1" << endl
             << "  start server 2" << endl
-            << "  start student client 1" << endl
-            << "  start student client 2" << endl
             << "  start store client 1" << endl
             << "  start store client 2" << endl
+            << "  start student client 1" << endl
+            << "  start student client 2" << endl
             << "***************************************************************************************************************************"
             << endl;
 }
 
 
-void printExitMessage() {
+void static printExitMessage() {
     cout << "bye!" << endl;
 }
 
-void printLineHeader() {
+void static printLineHeader() {
     cout << "wangleqing > ";
 }
 
-void printErrorCommandMessage(const char *command) {
+void static printErrorCommandMessage(const char *command) {
     string errorCommand = command;
     cout << "「" + errorCommand + "」is not a correct command. See 「help」." << endl;
 }
 
-vector<string> lexer(char *command) {
+vector<string> static lexer(char *command) {
     vector<string> items;
     char splitPattern = ' ';
     char *item = strtok(command, &splitPattern);
@@ -92,16 +93,16 @@ vector<string> lexer(char *command) {
 }
 
 
-void printSplit() {
+void static printSplit() {
     cout << "+-------------+-------------+-------------+" << endl;
 }
 
-void printTableHeader() {
+void static printTableHeader() {
     cout << "|     id      |    price    |    amount   |" << endl;
 }
 
 
-void printItem(Item item) {
+void static printItem(Item item) {
     std::cout << "| ";
     vector<int> record;
     record.push_back(item.id);

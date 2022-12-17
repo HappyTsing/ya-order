@@ -1,12 +1,4 @@
 #include "../include/Client.h"
-#include "../include/Utils.h"
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <iostream>
-
-using namespace std;
 
 Client::Client(int schoolID,int type) {
     this->schoolID = schoolID;

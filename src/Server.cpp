@@ -1,12 +1,4 @@
-#include <netinet/in.h>
-#include <memory.h>
-#include <unistd.h>
-#include <iostream>
-#include <sys/socket.h>
-#include <vector>
-#include <fcntl.h>
 #include "../include/Server.h"
-
 
 Server::Server(int id, int port) {
     this->id = id;
@@ -57,7 +49,6 @@ int Server::start() {
             //break;
         }
         int buf[256];
-        int round = 0;
         while (true) {
             memset(buf, 0, sizeof(buf));
             recv(nConnectedSocket, buf, sizeof(buf), 0);
@@ -112,11 +103,6 @@ int Server::start() {
                 char result[256] = "remove success";
                 send(nConnectedSocket, result, sizeof(result), 0);
             }
-            round++;
-            if (round == 3) {
-                close(nConnectedSocket);
-            }
-
         }
         close(nConnectedSocket);
     }
