@@ -17,7 +17,7 @@ int main() {
         Client *storeClient1 = new Client(1, STORE);
         storeClient1->start();
     } else if (strncasecmp(command, "start store client 2", 20) == 0) {
-        Client *storeClient2 = new Client(1, STORE);
+        Client *storeClient2 = new Client(2, STORE);
         storeClient2->start();
     } else if (strncasecmp(command, "start student client 1", 22) == 0) {
         Client *stuClient1 = new Client(1, STUDENT);
